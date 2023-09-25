@@ -1,0 +1,80 @@
+.Card {
+    width: 80%;
+    height: 350px;
+    border-style: solid;
+    border-width: 1px;
+    flex: content;
+    border-color: lightcyan;
+    align-items: center;
+    border-radius: 15%;
+    perspective: 1000px;
+    margin: 5px;
+    padding: 1em 1.5em;
+    /* flex-grow: 1;
+    flex-basis: 25%;  */
+}
+
+.Card h5 {
+    font-size: 28px;
+    width: 100%;
+    height: fit-content;
+    white-space: pre-line;
+    text-align: center;
+    text-shadow: 3px 3px 10px blue;
+}
+
+.Card h6 {
+    font-size: 16px;
+    width: 100%;
+    height: fit-content;
+    white-space: pre-line;
+    text-align: left;
+
+}
+
+.Card:hover {
+    border-width: 5px;
+    border-color: rgb(128, 0, 255);
+}
+
+.Card:active .flip-card-inner {
+    transform: rotateX(180deg);
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-inner img {
+    width: 40%;
+    height: 40%;
+    object-fit: contain;
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Style the back side */
+.flip-card-back {
+    transform: rotateX(180deg);
+}
