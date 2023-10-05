@@ -76,3 +76,12 @@ h2 {
     box-shadow: rgba(155, 0, 0, 0.896) 3px 3px 5px;
     transform: translateY(0);
 }
+
+.correctAnswer{
+    color: green;
+}
+
+
+.incorrectAnswer{
+    color: red;
+}

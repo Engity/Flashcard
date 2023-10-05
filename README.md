@@ -1,38 +1,32 @@
-# Web Development Project 2 - Computer Science Trivia
+# Web Development Project 3 - Computer Science Trivia
 
 Submitted by: Thomas Nguyen
 
-This web app: Display questions in a random order
+This web app: A computer science trivia with shuffle functionality.
 
-Time spent: 11 hours spent in total
+Time spent: 10 hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [X] **The title of the card set and some information about it, such as a short description and the total number of cards are displayed**
-- [X] **A single card at a time is displayed, only showing one of the components of the information pair**
-- [X] **A list of card pairs is created**
-- [X] **Clicking on the card shows the corresponding component of the information pair**
-- [X] **Clicking the next button displays a random new card**
+- [X] **The user can enter their guess in a box before seeing the flipside of the card**
+- [X] **Clicking on a submit button shows visual feedback about whether the answer was correct or incorrect**
+- [X] **A back button is displayed on the card and can be used to return to the previous card in a set sequence**
+- [X] **A next button is displayed on the card and can be used to navigate to the next card in a set sequence**
 
 The following **optional** features are implemented:
 
-- [X] Cards contains images in addition to or in place of text
-- [X] Cards have different visual styles such as color based on their category
-  - [X] Background color
-  - [X] Text Color
+- [X] A shuffle button is used to randomize the order of the cards
+- [X] A user's answer may be counted as correct even when it is slightly different from the target answer
+- [X] A counter displays the user's current and longest streak of correct responses
+- [ ] A user can mark a card that they have mastered and have it removed from the pool of answers as well as added to a list of mastered cards
 
 The following **additional** features are implemented:
-
-* [X] A backward traversal button
-* [X] Traversal buttons does not show up when at the end or beginning of the card
-* [X] Click and hold to reveal answer
-* [X] Current card display
-
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
+- [X] User cannot enter a blank guess
 
 <img src='./src/assets/walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 

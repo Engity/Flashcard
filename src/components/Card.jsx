@@ -1,50 +1,46 @@
 import React, { useState } from "react";
 import '../assets/styles/Card.css'
 
-const Card = ({ quiz }) => {
-    const [showAnswer, setShowAnswer] = useState(false);
-
-    const revealAnswer = () => {
-        setShowAnswer(!showAnswer);
-        //console.log("Reveal answer: ", showAnswer);
-    };
-
-
-
+const Card = ({ quiz, showAnswer, flipRef, correctAnswer }) => {
+    let textColor = quiz.textColor;
+    let backgroundColor = quiz.backgroundColor;
+    let textShadow = quiz.textShadow;
+    if (quiz.correctGuess) {
+        textColor = quiz.correctTextColor;
+        backgroundColor = quiz.correctBackgroundColor;
+    }
     return (
         // <div className={'Card'} onMouseDown={revealAnswer} onMouseUp={revealAnswer}
         <div className={'Card'}
             style={{
-                color: quiz.textColor,
-                backgroundColor: quiz.backgroundColor,
-                textShadow: quiz.textShadowColor,
+                color: textColor,
+                backgroundColor: backgroundColor,
+                textShadow: textShadow,
             }}
         >
-            {/* <div className="flip-card-inner">
-                {!showAnswer ? <div className="flip-card-front">
-                    <center><h5>{quiz.question} </h5></center>
-                    {quiz.imageQuestion ? <img src={quiz.imageQuestion}></img> : <></>}
+            {showAnswer && (quiz.correctGuess ?
+                <div className="correct">
+                    Correct
+                </div>
+                : <div className="incorrect">
+                    Incorrect
+                </div>)}
 
-                </div> : <></>}
 
-                {showAnswer ? 
-                    <div className="flip-card-back">
+            <div className="flip-card-inner" ref={flipRef}>
+                {!showAnswer ?
+                    <div className="flip-card-front" >
+                        <center><h5>{quiz.question} </h5></center>
+                        {quiz.imageQuestion ? <img src={quiz.imageQuestion}></img> : <></>}
+                    </div>
+                    :
+                    // Showing Answer
+                    <div className="flip-card-back" >
                         <center><h6>{quiz.answer}</h6></center>
                         {quiz.imageAnswer ? <img src={quiz.imageAnswer}></img> : <></>}
-                    </div> 
-                : <></>}
-            </div> */}
+                    </div>
 
-            <div className="flip-card-inner">
-                <div className="flip-card-front">
-                    <center><h5>{quiz.question} </h5></center>
-                    {quiz.imageQuestion ? <img src={quiz.imageQuestion}></img> : <></>}
-
-                </div>
-                <div className="flip-card-back">
-                    <center><h6>{quiz.answer}</h6></center>
-                    {quiz.imageAnswer ? <img src={quiz.imageAnswer}></img> : <></>}
-                </div>
+                }
 
             </div>
 
